@@ -12,9 +12,9 @@ form {
   position: fixed;
   top: 0.2%;
   right: 0.2%;
-  width: 150px;
+  width: 200px;
   height: auto;
-  max-width: 15vw;
+  max-width: 20vw;
 }
 textarea {
   resize: none;
@@ -91,13 +91,13 @@ textarea {
 }
 
 h1 {
-  color: #c0bcb5;
+  color: white;
   font-family: "Rubik";
   font-size: 30px;
   margin-bottom: 5px;
 }
 h2 {
-  color: #0054a5;
+  color: #f7d5b2;
   font-family: "Rubik";
   font-size: 18px;
   margin-top: 0;
@@ -174,7 +174,7 @@ nav {
 /* Container as a grid */
 #entriesContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   padding: 20px;
 }
@@ -188,7 +188,7 @@ nav {
   overflow-wrap: break-word;
   overflow: hidden;
   box-sizing: border-box;
-  min-height: 125px;
+  min-height: 150px;
 }
 
 .entry h3 {
