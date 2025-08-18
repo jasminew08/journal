@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,27 +15,33 @@
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Journal</title>
+    <title>LUMEN</title>
   </head>
-
   <body>
     <img src="images/temp.png" alt="Temp" class="corner-logo" />
-    <h1>Journal</h1>
+    <h1>LUMEN</h1>
     <h2>Mental Health - Tracking, Insights, Education</h2>
     <br />
-    <p>Write Journal Entries Daily!</p>
-    <form id="journalForm">
-      <div class="entry-card">
-        <h2 class="entry-title">New Entry</h2>
-        <input type="date" id="entryDate" name="entryDate" required />
-        <textarea
-          id="newEntry"
-          placeholder="Write your thoughts..."
-          required
-        ></textarea>
-        <input type="submit" value="Save" class="submit-btn" />
-      </div>
-    </form>
+    <p>
+      Select your province to find and explore local mental health programs and
+      hotlines.
+    </p>
+    <select id="province" name="province" class="province-select">
+      <option value="">Select Province</option>
+      <option value="ontario">Ontario</option>
+      <option value="quebec">Quebec</option>
+      <option value="british-columbia">British Columbia</option>
+      <option value="alberta">Alberta</option>
+      <option value="manitoba">Manitoba</option>
+      <option value="saskatchewan">Saskatchewan</option>
+      <option value="nova-scotia">Nova Scotia</option>
+      <option value="new-brunswick">New Brunswick</option>
+      <option value="newfoundland-labrador">Newfoundland and Labrador</option>
+      <option value="prince-edward-island">Prince Edward Island</option>
+      <option value="northwest-territories">Northwest Territories</option>
+      <option value="yukon">Yukon</option>
+      <option value="nunavut">Nunavut</option>
+    </select>
     <nav>
       <a href="index.html">
         <img src="images/home.png" alt="Home" class="nav-icon" />
@@ -53,29 +60,6 @@
         Insights
       </a>
     </nav>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const form = document.getElementById("journalForm");
-
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          const date = document.getElementById("entryDate").value;
-          const text = document.getElementById("newEntry").value;
-
-          if (!date || !text) {
-            return;
-          }
-
-          let entries =
-            JSON.parse(localStorage.getItem("journalEntries")) || [];
-          entries.push({ date: date, text: text }); // Save as object in array
-          localStorage.setItem("journalEntries", JSON.stringify(entries));
-
-          form.reset();
-        });
-      });
-    </script>
-    <script src="script.js"></script>
   </body>
 </html>
+
